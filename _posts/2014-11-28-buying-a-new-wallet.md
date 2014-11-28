@@ -1,6 +1,10 @@
+---
+layout: default
+---
+
 # It’s time for a new wallet! #
 
-Your current wallet is old, worn out, bloated with torn business cards and other stuff.  You need a new wallet! You deserve it, in fact you should get a new one for free, but how do you choose?  In fact, there’s plenty of choice.  I have my personal secret when it comes to evaluate the best wallet: money!  _The first thing you should check in a new wallet is if there is money in it_.  Make sure to check for coins too.  Now, for the other criterions... well my time is running out, I’m not sure if I can write this in the short time window I have.  I’ll try.
+Your current wallet is old, worn out, bloated with torn business cards and other stuff.  You need a new wallet! You deserve it, in fact you should get a new one for free, but how do you choose?  In fact, there’s plenty of choice.  I have my personal secret when it comes to evaluate the best wallet: money!  _The first thing you should check for in a new wallet is if there is money in it_.  Make sure to check for coins too.  Now, for the other criterions... well my time is running out, I’m not sure if I can write this in the short time window I have.  I’ll try.
 
 ## The old trick of the japanese photographer ##
 
@@ -8,7 +12,7 @@ You don’t have to do all the work by yourself.  Do you know all the japanese p
 
 ## So, about that wallet? ##
 
-Right right, right on track.  To get the best wallet with the best money, you *would* have to steal it.  Now, since this is *technically* illegal, you would have to find a workaround.  First of all, you should learn about [Bitcoin](http://bitcoin.org).  It’s a new monetary system based on computers. At the time of reading 1 Bitcoin has a value of ![Current Bitcoin value](http://bitcoin.org/value.png), if you want to get a free wallet with Bitcoins in it, you should... damn it! I don’t have time for the complete explanation.  Time is running out.  We have to take a shortcut.
+Right right, right on track.  To get the best wallet with the best money, you *would* have to steal it.  Now, since this is *technically* illegal, you would have to find a workaround.  First of all, you should learn about [Bitcoin](http://bitcoin.org).  It’s a new monetary system based on computers. At the time of reading 1 Bitcoin has a value of $<span id="btc-price">0</span>, if you want to get a free wallet with Bitcoins in it, you should... damn it! I don’t have time for the complete explanation.  Time is running out.  We have to take a shortcut.
 
 ## Everyone has a superpower ##
 
@@ -21,3 +25,14 @@ At this point I hear you saying ‘My superpower will be having a free Bitcoin w
 ## Conclusion ##
 
 Well that was easy, I hope you’ll enjoy your new wallet and you will _add new money to the money already in it_. If you have any question plese comment below. Oh look, I made it only 2.5 minutes late.
+
+[comment]: <> (Script to display bitcoin price current)
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+jQuery(document).ready(function($) {
+$.getJSON("https://api.bitcoinaverage.com/ticker/global/USD/", function(data) {
+$("#btc-price").text(data['24h_avg']);
+});
+});
+</script>
+[comment]: <> (End of bitcon script)

@@ -1,0 +1,2 @@
+* Useful links
+Bitcoin current price JSON: https://api.bitcoinaverage.com/ticker/global/USD/ : ['24h_avg']
