@@ -4,7 +4,7 @@ layout: default
 
 # It’s time for a new wallet! #
 
-Your current wallet is old, worn out, bloated with torn business cards and other stuff.  You need a new wallet! You deserve it, in fact you should get a new one for free, but how do you choose?  In fact, there’s plenty of choice.  I have my personal secret when it comes to evaluate the best wallet: money!  _The first thing you should check for in a new wallet is if there is money in it_.  Make sure to check for coins too.  Now, for the other criterions... well my time is running out, I’m not sure if I can write this in the short time window I have.  I’ll try.
+Your current wallet is old, worn out, bloated with torn business cards and other stuff.  You need a new wallet! You deserve it, in fact you should get a new one for free, but how do you choose?  In fact, there’s plenty of choice.  I have my personal secret when it comes to evaluate the best wallet: money!  _The first thing you should check for in a new wallet is the money inside it_.  Make sure to check for coins too.  Now, for the other criterions... well my time is running out, I’m not sure if I can write this in the short time window I have.  I’ll try.
 
 ## The old trick of the japanese photographer ##
 
