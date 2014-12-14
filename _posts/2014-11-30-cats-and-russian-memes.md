@@ -14,17 +14,17 @@ In our western culture famous cartoons cats are characters like Tom in “Tom & 
 ![Woof is actually being scared][woof3] Storms can be scary for cats.
 ![Sharik asks if he can join][woof4] Seems legit.
 
-Woof the cat it’s probably one of the most popular character but there is another one so much popular that it’s on every milk bottle. It’s the Matroskin cat. In my personal opinion the milk is the best you can find in the stores, but in the cartoon poor hygene milking the cow makes the owner sick. Here is a snippet of the first episod when the father stands for keeping the cat in the family, his wife not so much.
+Woof the cat it’s probably one of the most popular character but there is another one so much popular that it’s on every milk bottle. It’s the Matroskin cat. In my personal opinion the milk is the best you can find in the stores, but in the cartoon poor hygene milking the cow makes the owner sick. Here is a snippet of the first episode, when the father stands for keeping the cat in the family, his wife not so much.
 
 ![Wife says: well you have to choose either me or the cat][pros1] Well, that’s just as good as saying that the cat has to go.
 ![Dad looks closely at the cat][pros2] Wait, is he seriously taking time to decide?
 ![Dad looks closely at wife][pros3] Ok, I know where this is going.
 
-These are just two examples but you will find a huge amount of cat if you just do a search for союз мултифыльми whis is the major cartoon house in Russia. There you have my last one:
+These are just two examples but you will find a huge amount of cat if you just do a search for Союзмультфильм whis is the major cartoon house in Russia. There you have my last one:
 
 ![Cat asks how to grow fast][cot1] “How big you are Mr. Mushroom, how did you get big so fast?”
 ![Mushroom answer that the rain makes everything grow faster][cot2] “The rain makes everything grow faster!”
-![Cat all wet][cot3] “Have I grown up already?”
+![Cat all wet][cot3] “Have I grown up yet”
 
 [catStalin]: http://s4.pikabu.ru/post_img/2014/03/29/0/1396038559_431010970.jpg "Maybe Stalin was a cat after all"
 [gav]: {{ site.url }}/assets/gav.jpg
