@@ -45,3 +45,4 @@ tramp
 ##### Jekyll
 
 _drafts/*.html
+.jekyll-metadata
