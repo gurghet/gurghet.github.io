@@ -6,7 +6,7 @@ layout: default
 
 ## and how it relates to the MVC and all his variants
 
-In his primordial form the MVC pattern have the main intent of modularize a graphical application or a graphical component in three main sub-units each with a separate set of concern. The value of such division is to improve code clearness of intent and thus a higher maintainability.
+In his primordial form the MVC pattern had the main intent of modularize a graphical application or a graphical component in three main sub-units each with a separate set of concerns. The value of such division is to improve code clearness of intent and thus a higher maintainability.
 
 In the earlier MVC we had a complete circle in which the controller processed the input and fiddled the model to change its state, this change is messaged to the view that update itself and waits for further interaction from the user which will be passed to the controller and so another cycle begins.
 
@@ -105,20 +105,47 @@ Let's put everything together to see how the whole system works and let's also t
 
 Iscream is a food firm that sells ice-creams, it's business mission statement is to scare his customer in as many ways as possible. One of the things this company does is to sell ice-creams of one flavour instead of the requested flavour, and it tricks customers by swapping flavours with the same colour like mint and pitachio or alemond and butter pecan.
 
-The presenter is a receptacle of business methods, and is also at application level, so is a natural place to initiate things like `practicalJokeFlavourExchange`
+The presenter is a receptacle of business methods, and is also at application level, so is a natural place to initiate things like `loadSimilarColorOnTruck` presented here as it was written with the java Spring framework
 
 {% highlight java linenos %}
 public class IscreamPresenter implements UserEventListener {
 
+    @Transactional
+    @PreAuthorize("hasRole('ROLE_EMPLOYEE')")
     @Override
-    public void practicalJokeFlavourExchange(String aUser,
-                                             String aFlavour) {
-        User user = new User(aUser);
-        Flavour flavour = new Flavour(aFlavour);
-        Color color = new Color(flavour.color());
+    public void loadSimilarColorOnTruck(String aTruck
+                                        String aFreezer) {
+        Truck truck = new Truck(aTruck);
+        Freezer freezer = new Freezer(aFreezer);
 
-        List<IceCream>
+        List iceCreamsTruck = truck.iceCreams();
+        List iceCreamsFreezer = freezer.iceCreams();
+        
+        Colour matchingColour = Utils.findMatch(iceCreamsTruck, iceCreamsFreezer);
+        List iceCreamsTruckColour = truck.findByColour(matchingColour);
+        List iceCreamsFreezerColour = freezer.findByColour(matchingColour);
+        Flavour firstTruckFlavour = iceCreamsTruckColour.get(0).flavour();
+        Flavour firstFreezerFlavour = iceCreamsFreezerColour.get(0).flavour();
+
+        List iceCreams1 = iceCreamsTruckColour.stream()
+            .collect(Collectors
+                .partitioningBy(i -> i.flavour() == firstTruckFlavour));
+        List iceCreams2 = iceCreamsFreezerColour.stream()
+            .collect(Collectors
+                .partitioningBy(i -> i.flavour() == firstFreezerFlavour));
+
+        commandStack.push(new TakeIceCreamsCommand(iceCreams2, freezer);
+        commandStack.push(new UnloadIceCreamsCommand(iceCreams1, truck);
+        commandStack.push(new LoadIceCreamsCommand(iceCreams2, truck);
+        commandStack.push(new PutIceCreamsCommand(iceCreams1, freezer);
+        commandStack.push(new CommandSeparator("Load Similar Colour On Truck");
+
+        iscreamView.truck().displayIceCreams(truck.iceCreams());
+        iscreamView.freezer().displayIceCreams(freezer.iceCreams());
+
     }
 
 }
 {% endhighlight %}
+
+Here we see how everything fits together, the presenter, selectors, commands, the view and the model. We leave leave the interactor for a part two...
