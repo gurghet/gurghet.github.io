@@ -1,6 +1,7 @@
 ---
 layout: default
 title: This is another test
+published: false
 ---
 
 {{ page.title }}
