@@ -11,17 +11,27 @@
     <link rel="stylesheet" href="/css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.0/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
   </head>
   <body>
-    <header>
-      <p>A logo would be great here</p>
-      <h1>This is the header</h1>
+    <header id="banner">
+      <div class="inner">
+        <p>A logo would be great here</p>
+        <h1>This is the header</h1>
+      </div>
     </header>
-    <div id="main">
+    <section id="one" class="wrapper">
+    <div class="inner">
       {{ content }}
     </div>
-    <footer>
-      <p>A footer will be placed here... eventually.</p>
+    </section>
+    <footer id="footer">
+      <div class="copyright">
+        <p>A footer will be placed here... eventually.</p>
+      </div>
     </footer>
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
