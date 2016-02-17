@@ -6,9 +6,11 @@ layout: default
 
 ## and how it relates to the MVC and all his variants
 
-In his primordial form the MVC pattern had the main intent of modularize a graphical application or a graphical component in three main sub-units each with a separate set of concerns. The value of such division is to improve code clearness of intent and thus a higher maintainability.
+![The Taligent proposal for a new architecture][taligent]In his primordial form the MVC pattern had the main intent of modularize a graphical application or a graphical component in three main sub-units each with a separate set of concerns. The value of such division is to improve code clearness of intent and thus a higher maintainability.
 
 In the earlier MVC we had a complete circle in which the controller processed the input and fiddled the model to change its state, this change is messaged to the view that update itself and waits for further interaction from the user which will be passed to the controller and so another cycle begins.
+
+![Our typical everyman MVC][general-mvc]In the earlier MVC we had a complete circle in which the controller processed the input and fiddled the model to change its state, this change is messaged to the view that update itself and waits for further interaction from the user which will be passed to the controller and so another cycle begins.
 
 I would argue that even if the system is now more modular, the three components are still coupled. In fact they have a cyclic dependency that theoretically is a bad symptom if you are looking for low coupling.
 
@@ -16,13 +18,9 @@ With time the MVC evolved, especially thanks to the web and the Struts 2 framewo
 
 The MVP architectural pattern was born about 20 years later and featured a lot of further modularization of the MVC beyond separating the model and the view even further.
 
-It originally replaced the controller with the presenter and added Commands, Selections and the Interactor in the data flow. The presenter is seen as a collection point of data and events whereas the controller is more connection point between the two. The Interactor is placed between the view and the presenter and is a filter that turn raw interface events like "user clicked the save button" into user intentions by contextualising them. The Commands box is placed between the presenter and the Selections. It specifies the available operations one can perform on a specified selection. Selections, placed after Commands but before the model, answer to the question "how do I specify my data?" This using a DDD repository would translate for example in a method like `findByColour` so I can retrieve a set of object to operate on all of the same colour.
+It originally replaced the controller with the presenter and added Commands, Selections and the Interactor in the data flow. The presenter is seen as a collection point of events. The Interactor is placed between the view and the presenter and is a filter that turn raw interface events like “user clicked the save button” into user intentions by contextualising them. The Commands specify the available operations one can perform on a specified Selection. Selections answer to the question “how do I specify my data?” This using a DDD repository would translate for example in a method like `findByColour` so I can retrieve a set of object to operate on all of the same colour.
 
-Now, the original paper put commands before selections, but then says that commands are performed based on a previous selection. I assume this is an error and they would have to be switched, but apart from that, it also says a couple of things that I don't see in real systems and another couple of things I would tweek to better adhere to DDD.
-
-The first thing to note is that the Interactor immediately becomes part of our model if it has to really contextualize raw user events. When I click a toggle button I may want to either switch it on or off. The Interactor should change the label of the toggle button accordigly, interpret the click as the right action, and also ask the user if he is sure he wants to switch on the lights, say if there is some photographic development in progress and turning on the light could interfere. While the first two concerns are purely view-related, the last one imply knowledge about the domain. I would avoid putting domain knowledge in the Interactor and I would see it more as a place to put complex view logic or ensemble logic for more views.
-
-The second thing is that, according to this early model, the view still communicates with the model. Of course using a distributed notification system is nice but it still requires a data access *from* the view. This means? Yep, you guessed it, coupling between the model and the view. This is sooo practical right? I want the name of a user displayed on the screen, I just write
+According to this early model, the view still communicates with the model. Of course using a distributed notification system is nice but it still requires a data access from the view. This means? Yep, you guessed it, coupling between the model and the view. This is sooo practical right? I want the name of a user displayed on the screen, I just write
 
 {% highlight java %}
 public void displayUser() {
@@ -38,7 +36,7 @@ public void displayUser() {
 }
 {% endhighlight %}
 
-Right? Except now we support Chinese, Spanish and Russian and the API for getting the name changed. The concept for name is more generalized and specialized at the same time: there is longName, shortName, surname, patrnonimic, name[0], name[3], etc. We update the mobile view but we forget to update the web view and so our view is partly broken. The interface guys try to fix it but they don't have permission to do so because displaying a legal name in the invoices is not part of their knowledge, it's part of the domain knowledge. We mixed some domain knowledge in the views. What if we did
+Right? Except now we support Chinese, Spanish and Russian and the API for getting the name changed. The concept for name is more generalized and specialized at the same time: there is longName, shortName, surname, patrnonimic, `name[0]`, `name[3]`, etc. We update the mobile view but we forget to update the web view and so our view is partly broken. The interface guys try to fix it but they don't have permission to do so because displaying a legal name in the invoices is not part of their knowledge, it's part of the domain knowledge. We mixed some domain knowledge in the views. What if we did
 
 {% highlight java %}
 public void displayUser(String name) {
@@ -46,7 +44,7 @@ public void displayUser(String name) {
 }
 {% endhighlight %}
 
-we would have a view with most of the specification left at deeper level, so that one would have to write at least an `if` statement to distinguish between different view types. This would achieve full decoupling but would leave some view concerns inside the model. A good compromise could be to establish a `Name` concept at the presentation level and have it shared as Ubiquitous Language term.
+we would have a view with most of the specification left at deeper level, so that one would have to write at least an `if` statement to distinguish between different view types. This would achieve full decoupling but would leave some view concerns inside the model. A good compromise could be to establish a `Name` concept at the presentation level and have it shared as *Ubiquitous Language* term.
 
 {% highlight java %}
 public void displayUser(Name name) {
@@ -149,3 +147,6 @@ public class IscreamPresenter implements UserEventListener {
 {% endhighlight %}
 
 Here we see how everything fits together, the presenter, selectors, commands, the view and the model. We leave leave the interactor for a part two...
+
+[taligent]:{{ site.url }}/assets/taligent-mvp.png
+[general-mvc]:{{ site.url }}/assets/general-mvc.png
