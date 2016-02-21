@@ -37,7 +37,7 @@ Actually for this to work you are in charge of creating the linker component, bu
 
 That's it, I even provided default data! The smart table would work provided that `link` is the name of the column you want to replace with your linker component. But how does it work? I'm going to post the component to the community as soon as possible, in the meantime you can take a look at the basic inner workings.
 
-{% highlight html %}
+    {% highlight html %}
     <template>
       <div class="smart-table">
         <table>
@@ -53,8 +53,11 @@ That's it, I even provided default data! The smart table would work provided tha
         </table>
       </div>
     </template>
+    {% endhighlight %}
+
+
     <script>
-    {% endhighlight %}{% highlight javascript %}
+    {% highlight javascript %}
     export default {
       props: ['body'],
       ready () {
@@ -72,6 +75,5 @@ That's it, I even provided default data! The smart table would work provided tha
         }
       }
     }
-    {% endhighlight %}{% highlight html %}
+    {% endhighlight %}
     </script>
-{% endhighlight %}
