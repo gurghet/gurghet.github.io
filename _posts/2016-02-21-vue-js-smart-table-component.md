@@ -31,7 +31,7 @@ Actually for this to work you are in charge of creating the linker component, bu
 
     {% highlight javascript %}
     Vue.extend({
-      template: '<a href="{{value.href}}">{{value.title}}</a>',
+      template: '<a href="\{\{value.href\}\}">\{\{value.title\}\}</a>',
       data () { return { value: { href: '#', title: 'default title' } } }
     })
     {% endhighlight %}
@@ -46,7 +46,7 @@ That's it, I even provided default data! The smart table would work provided tha
             <tr v-for="row in body">
               <td v-for="(col, value) in row" :class="col">
                 <slot :name="col">
-                  {{value}} // the default behavior is plain text
+                  \{\{value\}\} // the default behavior is plain text
                 </slot>
               </td>
             </tr>
