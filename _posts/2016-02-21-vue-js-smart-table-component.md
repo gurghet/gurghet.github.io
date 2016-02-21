@@ -11,29 +11,30 @@ Vue is a very lightweght but extremely powerful framework. In fact, it took me m
 
 Then I figured out I could build a powerful general-purpose table component I could reuse here and there. I've done that and the result were really great. But there is a foundamental problem with these kind of tables.
 
-> When you pass data to the table through a props, the table will display the data exactly as you pass it.
+> When you pass data to the table through a props,
+> the table will display the data exactly as you pass it.
 > This means there is no immediate way to tell the table **how** to render data.
 
 Sure you could put built-in some options for example instead of passing the string `"http://google.com"` you could pass an object `{ href: "http://google.com", title: "Random search engine" }` but then you are limited no a certain number of options.
 
 The smart table I built is a little more powerful. Say you want to display some cell as links. With the Smart Table you can write something like this
 
-{% highlight html %}
+    {% highlight html %}
     <smart-table :body="body">
       <linker slot="link"></linker>
     </smart-table>
-{% endhighlight %}
+    {% endhighlight %}
 
 Easy right?
 
 Actually for this to work you are in charge of creating the linker component, but that's far from difficult
 
-{% highlight javascript %}
+    {% highlight javascript %}
     Vue.extend({
       template: '<a href="{{value.href}}">{{value.title}}</a>',
       data () { return { value: { href: '#', title: 'default title' } } }
     })
-{% endhighlight %}
+    {% endhighlight %}
 
 That's it, I even provided default data! The smart table would work provided that `link` is the name of the column you want to replace with your linker component. But how does it work? I'm going to post the component to the community as soon as possible, in the meantime you can take a look at the basic inner workings.
 
@@ -54,10 +55,8 @@ That's it, I even provided default data! The smart table would work provided tha
       </div>
     </template>
     {% endhighlight %}
-
-
-    <script>
     {% highlight javascript %}
+    <script>
     export default {
       props: ['body'],
       ready () {
@@ -75,5 +74,5 @@ That's it, I even provided default data! The smart table would work provided tha
         }
       }
     }
-    {% endhighlight %}
     </script>
+    {% endhighlight %}
