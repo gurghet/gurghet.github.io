@@ -30,15 +30,18 @@ Easy right?
 Actually for this to work you are in charge of creating the linker component, but that's far from difficult
 
     {% highlight javascript %}
+    {% raw %}
     Vue.extend({
-      template: '<a href="\{\{value.href\}\}">\{\{value.title\}\}</a>',
+      template: '<a href="{{value.href}}">{{value.title}}</a>',
       data () { return { value: { href: '#', title: 'default title' } } }
     })
+    {% endraw %}
     {% endhighlight %}
 
 That's it, I even provided default data! The smart table would work provided that `link` is the name of the column you want to replace with your linker component. But how does it work? I'm going to post the component to the community as soon as possible, in the meantime you can take a look at the basic inner workings.
 
     {% highlight html %}
+    {% raw %}
     <template>
       <div class="smart-table">
         <table>
@@ -46,7 +49,7 @@ That's it, I even provided default data! The smart table would work provided tha
             <tr v-for="row in body">
               <td v-for="(col, value) in row" :class="col">
                 <slot :name="col">
-                  \{\{value\}\} // the default behavior is plain text
+                  {{value}} // the default behavior is plain text
                 </slot>
               </td>
             </tr>
@@ -54,6 +57,7 @@ That's it, I even provided default data! The smart table would work provided tha
         </table>
       </div>
     </template>
+    {% endraw %}
     {% endhighlight %}
     
 And here's the script part:
