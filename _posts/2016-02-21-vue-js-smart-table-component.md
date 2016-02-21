@@ -17,21 +17,26 @@ Sure you could put built-in some options for example instead of passing the stri
 
 The smart table I built is a little more powerful. Say you want to display some cell as links. With the Smart Table you can write something like this
 
+{% highlight html %}
     <smart-table :body="body">
       <linker slot="link"></linker>
     </smart-table>
+{% endhighlight %}
 
 Easy right?
 
 Actually for this to work you are in charge of creating the linker component, but that's far from difficult
 
+{% highlight javascript %}
     Vue.extend({
       template: '<a href="{{value.href}}">{{value.title}}</a>',
       data () { return { value: { href: '#', title: 'default title' } } }
     })
+{% endhighlight %}
 
 That's it, I even provided default data! The smart table would work provided that `link` is the name of the column you want to replace with your linker component. But how does it work? I'm going to post the component to the community as soon as possible, in the meantime you can take a look at the basic inner workings.
 
+{% highlight html %}
     <template>
       <div class="smart-table">
         <table>
@@ -67,3 +72,4 @@ That's it, I even provided default data! The smart table would work provided tha
       }
     }
     </script>
+{% endhighlight %}
