@@ -11,7 +11,8 @@ Vue is a very lightweght but extremely powerful framework. In fact, it took me m
 
 Then I figured out I could build a powerful general-purpose table component I could reuse here and there. I've done that and the result were really great. But there is a foundamental problem with these kind of tables.
 
-> When you pass data to the table through a props, the table will display the data exactly as you pass it. This means there is no immediate way to tell the table **how** to render data.
+> When you pass data to the table through a props, the table will display the data exactly as you pass it.
+> This means there is no immediate way to tell the table **how** to render data.
 
 Sure you could put built-in some options for example instead of passing the string `"http://google.com"` you could pass an object `{ href: "http://google.com", title: "Random search engine" }` but then you are limited no a certain number of options.
 
@@ -52,10 +53,8 @@ That's it, I even provided default data! The smart table would work provided tha
         </table>
       </div>
     </template>
-    
     <script>
-    {% endhighlight %}
-    {% highlight javascript %}
+    {% endhighlight %}{% highlight javascript %}
     export default {
       props: ['body'],
       ready () {
@@ -73,7 +72,6 @@ That's it, I even provided default data! The smart table would work provided tha
         }
       }
     }
-    {% endhighlight %}
-    {% highlight html %}
+    {% endhighlight %}{% highlight html %}
     </script>
 {% endhighlight %}
