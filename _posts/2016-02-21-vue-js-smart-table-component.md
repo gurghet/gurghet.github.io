@@ -3,7 +3,7 @@ Title: Vue.js Smart Table Component
 layout: default
 ---
 
-# {{page.title}}
+## {{page.title}}
 
 In this article I'll outline how I build the smart table component in Vue.js. This is not a port from Angular, in fact I don't even know how the smart table in Angular is made.
 
@@ -55,8 +55,10 @@ That's it, I even provided default data! The smart table would work provided tha
       </div>
     </template>
     {% endhighlight %}
+    
+And here's the script part:
+    
     {% highlight javascript %}
-    <script>
     export default {
       props: ['body'],
       ready () {
@@ -74,5 +76,4 @@ That's it, I even provided default data! The smart table would work provided tha
         }
       }
     }
-    </script>
     {% endhighlight %}
