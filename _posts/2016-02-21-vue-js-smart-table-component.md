@@ -54,6 +54,7 @@ That's it, I even provided default data! The smart table would work provided tha
     </template>
     
     <script>
+    {% endhighlight %}
     {% highlight javascript %}
     export default {
       props: ['body'],
@@ -73,5 +74,6 @@ That's it, I even provided default data! The smart table would work provided tha
       }
     }
     {% endhighlight %}
+    {% highlight html %}
     </script>
 {% endhighlight %}
