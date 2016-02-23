@@ -1,13 +1,13 @@
 ---
-Title: Vue.js Smart Table Component
+Title: Smart Table Component with vue.js
 layout: default
 ---
 
 ## {{page.title}}
 
-In this article I'll outline how I build the smart table component in Vue.js. This is not a port from Angular, in fact I don't even know how the smart table in Angular is made.
+In this article I'll outline how I build the smart table component in vue.js. This is not a port from Angular, in fact I don't even know how the smart table in Angular works.
 
-Vue is a very lightweght but extremely powerful framework. In fact, it took me minutes to build a simple table component and you can see one in the [example page of the vue project](http://vuejs.org/examples/grid-component.html).
+Vue is a very lightweight but extremely powerful framework. In fact, it took me minutes to build a simple table component and you can see one in the [example page of the vue project](http://vuejs.org/examples/grid-component.html).
 
 Then I figured out I could build a powerful general-purpose table component I could reuse here and there. I've done that and the result were really great. But there is a foundamental problem with these kind of tables.
 
@@ -15,7 +15,7 @@ Then I figured out I could build a powerful general-purpose table component I co
 > the table will display the data exactly as you pass it.
 > This means there is no immediate way to tell the table **how** to render data.
 
-Sure you could put built-in some options for example instead of passing the string `"http://google.com"` you could pass an object `{ href: "http://google.com", title: "Random search engine" }` but then you are limited no a certain number of options.
+Sure you could have built-in some options, for example instead of passing the string `"http://google.com"` you could pass an object `{ href: "http://google.com", title: "Random search engine" }` but then you are limited to a certain number of options.
 
 The smart table I built is a little more powerful. Say you want to display some cell as links. With the Smart Table you can write something like this
 
