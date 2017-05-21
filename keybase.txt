@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/gurghet
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://gurghet.com
+  * I am gurghet (https://keybase.io/gurghet) on keybase.
+  * I have a public key ASCpLZRE8Zq10lCCNlcEQ4XsJico0ts9pWGECcEskSz8sAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120a92d9444f19ab5d250823657044385ec262728d2db3da5618409c12c912cfcb00a",
+            "host": "keybase.io",
+            "kid": "0120a92d9444f19ab5d250823657044385ec262728d2db3da5618409c12c912cfcb00a",
+            "uid": "8d8bcdfd72f0db16b759ecb9f6ed4719",
+            "username": "gurghet"
+        },
+        "service": {
+            "hostname": "gurghet.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.22"
+    },
+    "ctime": 1495368527,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1495368491,
+        "hash": "97247ed04223b8e9e4a4eabd22f32b81d1212f7132ee3fb84976e0e0bf9c8d54d136c3d472da825756a3f9abc38d830f27d215fb074f254d0e719cba66694c55",
+        "seqno": 1099157
+    },
+    "prev": "de06197885d7b7bdd629ffc3063e021fc0e863568f87bdd48cfed21635fb7ece",
+    "seqno": 13,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgqS2URPGatdJQgjZXBEOF7CYnKNLbPaVhhAnBLJEs/LAKp3BheWxvYWTFAvN7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwYTkyZDk0NDRmMTlhYjVkMjUwODIzNjU3MDQ0Mzg1ZWMyNjI3MjhkMmRiM2RhNTYxODQwOWMxMmM5MTJjZmNiMDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYTkyZDk0NDRmMTlhYjVkMjUwODIzNjU3MDQ0Mzg1ZWMyNjI3MjhkMmRiM2RhNTYxODQwOWMxMmM5MTJjZmNiMDBhIiwidWlkIjoiOGQ4YmNkZmQ3MmYwZGIxNmI3NTllY2I5ZjZlZDQ3MTkiLCJ1c2VybmFtZSI6Imd1cmdoZXQifSwic2VydmljZSI6eyJob3N0bmFtZSI6Imd1cmdoZXQuY29tIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4yMiJ9LCJjdGltZSI6MTQ5NTM2ODUyNywiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDk1MzY4NDkxLCJoYXNoIjoiOTcyNDdlZDA0MjIzYjhlOWU0YTRlYWJkMjJmMzJiODFkMTIxMmY3MTMyZWUzZmI4NDk3NmUwZTBiZjljOGQ1NGQxMzZjM2Q0NzJkYTgyNTc1NmEzZjlhYmMzOGQ4MzBmMjdkMjE1ZmIwNzRmMjU0ZDBlNzE5Y2JhNjY2OTRjNTUiLCJzZXFubyI6MTA5OTE1N30sInByZXYiOiJkZTA2MTk3ODg1ZDdiN2JkZDYyOWZmYzMwNjNlMDIxZmMwZTg2MzU2OGY4N2JkZDQ4Y2ZlZDIxNjM1ZmI3ZWNlIiwic2Vxbm8iOjEzLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQNbwjDi3s1hlcoO+TrSzFBC5nJpyWepEVOQfDVrUncxOfWW0ysAXPG4BiK/xU7hMl3mQrPlnrCCuoDNC8V79QwOoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCCdVJosm4NjDqTx9kAUhopbnKePd5Ldr8Ou7Rmv7uSILqN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/gurghet
+
+==================================================================
